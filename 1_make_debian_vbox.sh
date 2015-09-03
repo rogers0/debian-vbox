@@ -1,6 +1,6 @@
 #!/bin/bash
 
-DISTRO=wheezy
+DISTRO=jessie
 
 case "$DISTRO" in
 "wheezy")

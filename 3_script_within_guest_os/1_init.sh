@@ -37,14 +37,17 @@ elif grep jessie /etc/apt/sources.list &> /dev/null; then
 	fi
 	apt-get install -t sid --no-install-recommends -y linux-image-686-pae
 fi
-apt-get install --no-install-recommends -y rsync vim-nox vim-tiny-
+apt-get install --no-install-recommends -y rsync git vim-nox vim-tiny-
 apt-get autoremove -y
 if ! grep mdadm /etc/rc.local &> /dev/null; then
 	sed -i 's:exit 0:#mdadm /dev/md0 --re-add /dev/sdb1\n#mdadm /dev/md1 --re-add /dev/sdb2\n\n&:' /etc/rc.local
 fi
 
 if ! grep 3_script_within_guest_os ~/.bashrc &> /dev/null; then
-	echo 'export PATH=$PATH:~/3_script_within_guest_os' >> ~/.bashrc
+	echo export PATH=$SCRIPT_ROOT:'$PATH' >> ~/.bashrc
 fi
 
 $SCRIPT_ROOT/break_raid1.sh
+echo
+echo Now it\'s now to reboot: reboot
+echo But from next time, it\'s better to reboot by: reboot.sh
