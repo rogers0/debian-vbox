@@ -2,6 +2,7 @@
 
 SCRIPT_ROOT=$(readlink -f $(dirname $0))
 
+touch /opt; sync # to let /dev/md1 get out of read-only status
 mdadm -G /dev/md0 -b internal --bitmap-chunk=4096
 mdadm -G /dev/md1 -b internal --bitmap-chunk=4096
 if ! grep ^DEVICE /etc/mdadm/mdadm.conf &> /dev/null; then

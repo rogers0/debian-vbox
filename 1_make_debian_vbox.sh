@@ -26,11 +26,12 @@ esac
 
 VM=vbox_$DISTRO
 [ -d "$VM" ] && echo VM "$VM" exists already && exit 1
-BRIDGE=$(/sbin/ifconfig|grep HWaddr|grep -v vboxnet|head -n1|awk '{print $1}')
-echo Bridge device: $BRIDGE
 
 VBoxManage createvm --name $VM --ostype Debian --basefolder $(pwd) --register
-VBoxManage modifyvm $VM --memory=256 --nic1=bridged --bridgeadapter1=$BRIDGE
+#BRIDGE=$(/sbin/ifconfig|grep HWaddr|grep -v vboxnet|head -n1|awk '{print $1}')
+#echo Bridge device: $BRIDGE
+#VBoxManage modifyvm $VM --memory=256 --nic1=bridged --bridgeadapter1=$BRIDGE
+VBoxManage modifyvm $VM --memory=256 --nic1=nat
 
 VBoxManage storagectl $VM --add sata --portcount 2 --bootable on --name SATA
 VBoxManage storagectl $VM --add ide --bootable on --name IDE
