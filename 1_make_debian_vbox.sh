@@ -4,12 +4,12 @@ DISTRO=jessie
 
 case "$DISTRO" in
 "wheezy")
-	ISOIMG=~/debian-7.8.0-i386-netinst.iso
-	ISOURL=http://cdimage.debian.org/mirror/cdimage/archive/7.8.0/i386/iso-cd/debian-7.8.0-i386-netinst.iso
+	ISOIMG=~/debian-7.9.0-i386-netinst.iso
+	ISOURL=http://cdimage.debian.org/cdimage/archive/7.9.0/i386/iso-cd/debian-7.9.0-i386-netinst.iso
 	;;
 "jessie")
-	ISOIMG=~/debian-8.1.0-i386-netinst.iso
-	ISOURL=http://cdimage.debian.org/mirror/cdimage/release/8.1.0/i386/iso-cd/debian-8.1.0-i386-netinst.iso
+	ISOIMG=~/debian-8.2.0-i386-netinst.iso
+	ISOURL=http://cdimage.debian.org/cdimage/release/8.2.0/i386/iso-cd/debian-8.2.0-i386-netinst.iso
 	;;
 "stretch"|"sid")
 	ISOIMG=~/debian-stretch-DI-alpha2-i386-netinst.iso
