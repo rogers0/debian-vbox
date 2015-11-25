@@ -18,12 +18,16 @@ case "$DISTRO" in
 	;;
 "stretch"|"sid")
 	ISOIMG=~/debian-stretch-DI-alpha3-i386-netinst.iso
-	ISOURL=http://cdimage.debian.org/cdimage/stretch_di_alpha3/i386/iso-cd/debian-stretch-DI-alpha3-i386-netinst.iso
+	ISOURL=http://cdimage.debian.org/cdimage/stretch_di_alpha4/i386/iso-cd/debian-stretch-DI-alpha4-i386-netinst.iso
+	;;
+"kfreebsd")
+	ISOIMG=~/mini.iso
+	ISOURL=http://d-i.debian.org/daily-images/kfreebsd-i386/daily/netboot-10/mini.iso
 	;;
 *)
 	DISTRO=sid
 	ISOIMG=~/debian-stretch-DI-alpha3-i386-netinst.iso
-	ISOURL=http://cdimage.debian.org/cdimage/stretch_di_alpha3/i386/iso-cd/debian-stretch-DI-alpha3-i386-netinst.iso
+	ISOURL=http://cdimage.debian.org/cdimage/stretch_di_alpha4/i386/iso-cd/debian-stretch-DI-alpha4-i386-netinst.iso
 	;;
 esac
 
